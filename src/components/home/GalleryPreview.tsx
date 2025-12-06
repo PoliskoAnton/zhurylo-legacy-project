@@ -5,9 +5,9 @@ import family3 from "@/assets/family-3.png";
 import family8 from "@/assets/family-8.png";
 
 const galleryImages = [
-  { src: family1, alt: "Семья на прогулке" },
-  { src: family3, alt: "Летний отдых" },
-  { src: family8, alt: "На стадионе" },
+  { src: family1, alt: "Родина на прогулянці" },
+  { src: family3, alt: "Літній відпочинок" },
+  { src: family8, alt: "На стадіоні" },
 ];
 
 export const GalleryPreview = () => {
@@ -25,13 +25,13 @@ export const GalleryPreview = () => {
           className="text-center mb-16"
         >
           <p className="text-primary tracking-[0.4em] uppercase text-sm mb-4 font-display">
-            Моменты
+            Моменти
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="text-gradient-gold">Галерея</span>
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto font-body">
-            Каждый кадр — история. Каждый момент — наследие.
+            Кожен кадр — історія. Кожен момент — спадщина.
           </p>
         </motion.div>
 
@@ -75,7 +75,7 @@ export const GalleryPreview = () => {
             to="/gallery"
             className="inline-flex items-center gap-3 font-display text-lg tracking-widest uppercase text-primary hover:text-gold-light transition-colors group"
           >
-            <span>Смотреть всё</span>
+            <span>Дивитися все</span>
             <span className="w-8 h-px bg-primary group-hover:w-12 transition-all" />
           </Link>
         </motion.div>

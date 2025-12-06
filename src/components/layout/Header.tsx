@@ -6,10 +6,10 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "/", label: "Главная" },
-  { href: "/history", label: "История" },
-  { href: "/values", label: "Ценности" },
-  { href: "/directions", label: "Направления" },
+  { href: "/", label: "Головна" },
+  { href: "/history", label: "Історія" },
+  { href: "/values", label: "Цінності" },
+  { href: "/directions", label: "Напрямки" },
   { href: "/gallery", label: "Галерея" },
   { href: "/contact", label: "Контакт" },
 ];

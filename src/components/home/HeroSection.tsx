@@ -11,7 +11,7 @@ export const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={family5}
-          alt="Семья Zhurylo"
+          alt="Родина Zhurylo"
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
@@ -76,10 +76,10 @@ export const HeroSection = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <Button variant="hero" size="xl" asChild>
-            <Link to="/history">Наша История</Link>
+            <Link to="/history">Наша Історія</Link>
           </Button>
           <Button variant="neon" size="xl" asChild>
-            <Link to="/contact">Присоединиться</Link>
+            <Link to="/contact">Приєднатися</Link>
           </Button>
         </motion.div>
       </div>

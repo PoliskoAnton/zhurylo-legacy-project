@@ -4,28 +4,28 @@ import { Shield, Heart, Users, Crown, Compass } from "lucide-react";
 const values = [
   {
     icon: Heart,
-    title: "Семья",
-    description: "Основа всего. Сила, которая объединяет и защищает.",
+    title: "Родина",
+    description: "Основа всього. Сила, що об'єднує та захищає.",
   },
   {
     icon: Users,
-    title: "Братство",
-    description: "Плечо к плечу. Верность, которая не знает границ.",
+    title: "Братерство",
+    description: "Пліч-о-пліч. Вірність, що не знає меж.",
   },
   {
     icon: Shield,
     title: "Честь",
-    description: "Слово — закон. Достоинство превыше всего.",
+    description: "Слово — закон. Гідність понад усе.",
   },
   {
     icon: Crown,
-    title: "Наследие",
-    description: "Связь поколений. Передаём ценности от отца к сыну.",
+    title: "Спадщина",
+    description: "Зв'язок поколінь. Передаємо цінності від батька до сина.",
   },
   {
     icon: Compass,
-    title: "Целостность",
-    description: "Внутренний стержень. Гармония слова и дела.",
+    title: "Цілісність",
+    description: "Внутрішній стрижень. Гармонія слова і діла.",
   },
 ];
 
@@ -47,13 +47,13 @@ export const ValuesPreview = () => {
           className="text-center mb-16"
         >
           <p className="text-primary tracking-[0.4em] uppercase text-sm mb-4 font-display">
-            Наши принципы
+            Наші принципи
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-gradient-gold">Ценности</span>
+            <span className="text-gradient-gold">Цінності</span>
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto font-body">
-            То, что делает нас семьёй. То, что передаётся из поколения в поколение.
+            Те, що робить нас родиною. Те, що передається з покоління в покоління.
           </p>
         </motion.div>
 

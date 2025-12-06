@@ -6,43 +6,43 @@ const directions = [
   {
     icon: Heart,
     title: "Lifestyle & Family",
-    description: "Проекты, вдохновляющие на семейный образ жизни. События, путешествия, традиции — всё, что укрепляет связь между близкими.",
-    features: ["Семейные мероприятия", "Совместные путешествия", "Традиции и ритуалы"],
+    description: "Проєкти, що надихають на сімейний спосіб життя. Події, подорожі, традиції — все, що зміцнює зв'язок між близькими.",
+    features: ["Сімейні заходи", "Спільні подорожі", "Традиції та ритуали"],
     color: "from-burgundy to-burgundy-light",
   },
   {
     icon: BookOpen,
-    title: "Образование",
-    description: "Передача знаний и опыта следующим поколениям. Менторство, мастер-классы, истории успеха.",
-    features: ["Менторские программы", "Воркшопы для семей", "Школа ценностей"],
+    title: "Освіта",
+    description: "Передача знань і досвіду наступним поколінням. Менторство, майстер-класи, історії успіху.",
+    features: ["Менторські програми", "Воркшопи для родин", "Школа цінностей"],
     color: "from-emerald to-emerald-light",
   },
   {
     icon: Gift,
-    title: "Благотворительность",
-    description: "Помощь тем, кто в ней нуждается. Поддержка семей, детей, сообществ. Добро как семейная традиция.",
-    features: ["Помощь семьям", "Поддержка детей", "Социальные инициативы"],
+    title: "Благодійність",
+    description: "Допомога тим, хто її потребує. Підтримка родин, дітей, спільнот. Добро як сімейна традиція.",
+    features: ["Допомога родинам", "Підтримка дітей", "Соціальні ініціативи"],
     color: "from-gold-dark to-primary",
   },
   {
     icon: Shirt,
     title: "Мерч & Стиль",
-    description: "Одежда и аксессуары с символикой ZHURYLO. Не просто вещи — знаки принадлежности к семье.",
-    features: ["Коллекции одежды", "Аксессуары", "Лимитированные серии"],
+    description: "Одяг та аксесуари з символікою ZHURYLO. Не просто речі — знаки належності до родини.",
+    features: ["Колекції одягу", "Аксесуари", "Лімітовані серії"],
     color: "from-burgundy to-crimson",
   },
   {
     icon: Video,
-    title: "Медиа-контент",
-    description: "Истории, которые вдохновляют. Документальные фильмы, блог, подкасты о семейных ценностях.",
-    features: ["Документальные истории", "Семейный блог", "Подкаст о ценностях"],
+    title: "Медіа-контент",
+    description: "Історії, що надихають. Документальні фільми, блог, подкасти про сімейні цінності.",
+    features: ["Документальні історії", "Сімейний блог", "Подкаст про цінності"],
     color: "from-primary to-gold-light",
   },
   {
     icon: Calendar,
-    title: "Мероприятия",
-    description: "Встречи семьи ZHURYLO и сообщества единомышленников. Праздники, ретриты, networking.",
-    features: ["Семейные праздники", "Закрытые встречи", "Ретриты"],
+    title: "Заходи",
+    description: "Зустрічі родини ZHURYLO та спільноти однодумців. Свята, ретрити, networking.",
+    features: ["Сімейні свята", "Закриті зустрічі", "Ретрити"],
     color: "from-emerald-light to-emerald",
   },
 ];
@@ -61,13 +61,13 @@ const Directions = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="text-primary tracking-[0.4em] uppercase text-sm mb-4 font-display">
-              Мультинаправленность
+              Мультинапрямковість
             </p>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="text-gradient-gold">Направления</span>
+              <span className="text-gradient-gold">Напрямки</span>
             </h1>
             <p className="text-muted-foreground text-xl max-w-2xl mx-auto font-body">
-              Бренд ZHURYLO — это экосистема проектов, объединённых общими ценностями
+              Бренд ZHURYLO — це екосистема проєктів, об'єднаних спільними цінностями
             </p>
           </motion.div>
         </div>
@@ -133,15 +133,15 @@ const Directions = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <p className="text-primary tracking-[0.4em] uppercase text-sm mb-4 font-display">
-              В разработке
+              У розробці
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-gold">Новые горизонты</span>
+              <span className="text-gradient-gold">Нові горизонти</span>
             </h2>
             <p className="text-muted-foreground font-body text-lg leading-relaxed">
-              Каждый год мы расширяем границы бренда. Следите за новостями — 
-              впереди много интересного. Станьте частью семьи, чтобы первыми 
-              узнавать о новых проектах.
+              Щороку ми розширюємо межі бренду. Слідкуйте за новинами — 
+              попереду багато цікавого. Станьте частиною родини, щоб першими 
+              дізнаватися про нові проєкти.
             </p>
           </motion.div>
         </div>

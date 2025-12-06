@@ -27,7 +27,7 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-muted-foreground font-body text-lg leading-relaxed">
-              Семья. Братство. Целостность.
+              Родина. Братерство. Цілісність.
             </p>
           </motion.div>
 
@@ -39,17 +39,17 @@ export const Footer = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h4 className="font-display text-primary tracking-widest uppercase mb-6">
-              Навигация
+              Навігація
             </h4>
             <nav className="flex flex-col gap-3">
               <Link to="/" className="text-foreground/70 hover:text-primary transition-colors font-body">
-                Главная
+                Головна
               </Link>
               <Link to="/history" className="text-foreground/70 hover:text-primary transition-colors font-body">
-                История семьи
+                Історія родини
               </Link>
               <Link to="/values" className="text-foreground/70 hover:text-primary transition-colors font-body">
-                Ценности
+                Цінності
               </Link>
               <Link to="/gallery" className="text-foreground/70 hover:text-primary transition-colors font-body">
                 Галерея
@@ -65,16 +65,16 @@ export const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h4 className="font-display text-primary tracking-widest uppercase mb-6">
-              Связаться
+              Зв'язатися
             </h4>
             <p className="text-foreground/70 font-body mb-4">
-              Присоединяйтесь к семье ZHURYLO
+              Приєднуйтесь до родини ZHURYLO
             </p>
             <Link
               to="/contact"
               className="inline-block font-display text-sm tracking-widest uppercase text-primary border-b border-primary/50 hover:border-primary transition-colors"
             >
-              Написать нам
+              Написати нам
             </Link>
           </motion.div>
         </div>
@@ -89,7 +89,7 @@ export const Footer = () => {
         {/* Copyright */}
         <div className="text-center">
           <p className="text-muted-foreground text-sm font-body">
-            © {new Date().getFullYear()} ZHURYLO Family Brand. Все права защищены.
+            © {new Date().getFullYear()} ZHURYLO Family Brand. Усі права захищені.
           </p>
         </div>
       </div>
