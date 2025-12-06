@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import logoImage from "@/assets/logo.png";
 
 const navLinks = [
   { href: "/", label: "Головна" },
@@ -49,8 +50,12 @@ export const Header = () => {
             transition={{ duration: 0.6 }}
             className="flex items-center gap-3"
           >
-            <div className="w-10 h-10 border-2 border-primary flex items-center justify-center">
-              <span className="font-display text-primary text-xl font-bold">Z</span>
+            <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0">
+              <img
+                src={logoImage}
+                alt="Zhurylo Family Logo"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
             <div className="hidden sm:block">
               <span className="font-display text-xl tracking-[0.3em] text-foreground group-hover:text-primary transition-colors">

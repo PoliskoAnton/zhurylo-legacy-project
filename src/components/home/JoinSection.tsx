@@ -33,15 +33,9 @@ export const JoinSection = () => {
               Запрошення
             </p>
 
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-foreground">Станьте частиною </span>
-              <span className="text-gradient-gold">родини</span>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-10">
+              <span className="text-gradient-gold">Зв'язатись з нами</span>
             </h2>
-
-            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto font-body mb-10 leading-relaxed">
-              Приєднуйтесь до нашої спільноти. Розділіть наші цінності. 
-              Станьте частиною історії, яка житиме поколіннями.
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="xl" asChild>

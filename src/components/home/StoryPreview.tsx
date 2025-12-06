@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import family6 from "@/assets/family-6.png";
+import logoImage from "@/assets/logo.png";
 
 export const StoryPreview = () => {
   return (
@@ -30,8 +31,12 @@ export const StoryPreview = () => {
             </div>
 
             {/* Floating accent */}
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary/10 border border-primary/30 flex items-center justify-center">
-              <span className="font-display text-3xl text-primary font-bold">Z</span>
+            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-noir/80 backdrop-blur-sm border border-primary/30 flex items-center justify-center p-3">
+              <img
+                src={logoImage}
+                alt="Zhurylo Family Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
           </motion.div>
 

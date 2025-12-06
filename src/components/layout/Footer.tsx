@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import logoImage from "@/assets/logo.png";
 
 export const Footer = () => {
   return (
@@ -14,8 +15,12 @@ export const Footer = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 border-2 border-primary flex items-center justify-center">
-                <span className="font-display text-primary text-2xl font-bold">Z</span>
+              <div className="w-12 h-12 flex-shrink-0">
+                <img
+                  src={logoImage}
+                  alt="Zhurylo Family Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <span className="font-display text-2xl tracking-[0.3em] text-foreground">

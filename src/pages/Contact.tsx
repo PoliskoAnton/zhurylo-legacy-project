@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, MapPin, Send, Users } from "lucide-react";
 import { toast } from "sonner";
+import logoImage from "@/assets/logo.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -212,10 +213,6 @@ const Contact = () => {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto"
           >
-            <div className="w-20 h-20 mx-auto mb-8 border-2 border-primary flex items-center justify-center">
-              <span className="font-display text-4xl text-primary font-bold">Z</span>
-            </div>
-            
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
               <span className="text-gradient-gold">Родина — це вибір</span>
             </h2>

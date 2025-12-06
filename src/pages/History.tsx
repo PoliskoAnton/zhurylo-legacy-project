@@ -132,61 +132,28 @@ const History = () => {
             </h2>
           </motion.div>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/30 to-transparent hidden lg:block" />
-
-            <div className="space-y-16">
-              {timelineEvents.map((event, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`flex items-center gap-8 ${
-                    index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                  }`}
-                >
-                  <div className="flex-1 text-center lg:text-right">
-                    {index % 2 === 0 && (
-                      <div className="luxury-card">
-                        <span className="text-primary font-display text-sm tracking-widest">
-                          {event.year}
-                        </span>
-                        <h3 className="font-display text-2xl mt-2 mb-4 text-foreground">
-                          {event.title}
-                        </h3>
-                        <p className="text-muted-foreground font-body">
-                          {event.description}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Center diamond */}
-                  <div className="hidden lg:flex items-center justify-center">
-                    <div className="w-4 h-4 rotate-45 bg-primary shadow-[0_0_20px_hsl(var(--primary)/0.5)]" />
-                  </div>
-
-                  <div className="flex-1 text-center lg:text-left">
-                    {index % 2 !== 0 && (
-                      <div className="luxury-card">
-                        <span className="text-primary font-display text-sm tracking-widest">
-                          {event.year}
-                        </span>
-                        <h3 className="font-display text-2xl mt-2 mb-4 text-foreground">
-                          {event.title}
-                        </h3>
-                        <p className="text-muted-foreground font-body">
-                          {event.description}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {timelineEvents.map((event, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <div className="luxury-card h-full">
+                  <span className="text-primary font-display text-sm tracking-widest">
+                    {event.year}
+                  </span>
+                  <h3 className="font-display text-2xl mt-2 mb-4 text-foreground">
+                    {event.title}
+                  </h3>
+                  <p className="text-muted-foreground font-body">
+                    {event.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
 
