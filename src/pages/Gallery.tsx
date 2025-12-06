@@ -12,14 +12,14 @@ import family7 from "@/assets/family-7.png";
 import family8 from "@/assets/family-8.png";
 
 const galleryImages = [
-  { src: family1, alt: "Семья на прогулке", category: "Повседневность" },
-  { src: family2, alt: "День солидарности", category: "События" },
-  { src: family3, alt: "Летний отдых", category: "Отдых" },
-  { src: family4, alt: "Поддержка Украины", category: "События" },
-  { src: family5, alt: "Вместе в парке", category: "Повседневность" },
-  { src: family6, alt: "Праздничный портрет", category: "Праздники" },
-  { src: family7, alt: "На берегу озера", category: "Отдых" },
-  { src: family8, alt: "На стадионе", category: "События" },
+  { src: family1, alt: "Родина на прогулянці", category: "Повсякденність" },
+  { src: family2, alt: "День солідарності", category: "Події" },
+  { src: family3, alt: "Літній відпочинок", category: "Відпочинок" },
+  { src: family4, alt: "Підтримка України", category: "Події" },
+  { src: family5, alt: "Разом у парку", category: "Повсякденність" },
+  { src: family6, alt: "Святковий портрет", category: "Свята" },
+  { src: family7, alt: "На березі озера", category: "Відпочинок" },
+  { src: family8, alt: "На стадіоні", category: "Події" },
 ];
 
 const Gallery = () => {
@@ -38,13 +38,13 @@ const Gallery = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="text-primary tracking-[0.4em] uppercase text-sm mb-4 font-display">
-              Моменты жизни
+              Моменти життя
             </p>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
               <span className="text-gradient-gold">Галерея</span>
             </h1>
             <p className="text-muted-foreground text-xl max-w-2xl mx-auto font-body">
-              Каждый кадр — это история. Каждый момент — это память, которая останется навсегда.
+              Кожен кадр — це історія. Кожен момент — це пам'ять, яка залишиться назавжди.
             </p>
           </motion.div>
         </div>
@@ -141,11 +141,11 @@ const Gallery = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <p className="font-display text-3xl md:text-4xl italic text-foreground/90 leading-relaxed mb-6">
-              "Фотографии — это не картинки. Это замороженные моменты, 
-              в которых живёт душа семьи."
+              "Фотографії — це не картинки. Це заморожені моменти, 
+              в яких живе душа родини."
             </p>
             <footer className="text-primary font-display tracking-widest uppercase text-sm">
-              — Семья Zhurylo
+              — Родина Zhurylo
             </footer>
           </motion.blockquote>
         </div>

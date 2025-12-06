@@ -30,23 +30,23 @@ export const JoinSection = () => {
             <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary" />
 
             <p className="text-primary tracking-[0.4em] uppercase text-sm mb-6 font-display">
-              Приглашение
+              Запрошення
             </p>
 
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-foreground">Станьте частью </span>
-              <span className="text-gradient-gold">семьи</span>
+              <span className="text-foreground">Станьте частиною </span>
+              <span className="text-gradient-gold">родини</span>
             </h2>
 
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto font-body mb-10 leading-relaxed">
-              Присоединяйтесь к нашему сообществу. Разделите наши ценности. 
-              Станьте частью истории, которая будет жить поколениями.
+              Приєднуйтесь до нашої спільноти. Розділіть наші цінності. 
+              Станьте частиною історії, яка житиме поколіннями.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="xl" asChild>
                 <Link to="/contact" className="group">
-                  Связаться с нами
+                  Зв'язатися з нами
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>

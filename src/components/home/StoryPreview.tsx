@@ -24,7 +24,7 @@ export const StoryPreview = () => {
             <div className="relative photo-frame aspect-[4/5] overflow-hidden">
               <img
                 src={family6}
-                alt="Семья Zhurylo"
+                alt="Родина Zhurylo"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -43,33 +43,33 @@ export const StoryPreview = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <p className="text-primary tracking-[0.4em] uppercase text-sm mb-4 font-display">
-              Наша история
+              Наша історія
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-foreground">Больше чем </span>
-              <span className="text-gradient-gold">фамилия</span>
+              <span className="text-foreground">Більше ніж </span>
+              <span className="text-gradient-gold">прізвище</span>
             </h2>
 
             <div className="space-y-6 text-muted-foreground font-body text-lg leading-relaxed mb-8">
               <p>
-                ZHURYLO — это не просто имя. Это философия жизни, где семья стоит 
-                превыше всего. Где братство — не пустое слово, а ежедневный выбор.
+                ZHURYLO — це не просто ім'я. Це філософія життя, де родина стоїть 
+                понад усе. Де братерство — не порожнє слово, а щоденний вибір.
               </p>
               <p>
-                Мы верим, что настоящая сила — в единстве. В способности защитить 
-                своих близких и передать им ценности, которые будут жить веками.
+                Ми віримо, що справжня сила — в єдності. У здатності захистити 
+                своїх близьких і передати їм цінності, які житимуть віками.
               </p>
             </div>
 
             {/* Quote */}
             <blockquote className="border-l-2 border-primary pl-6 mb-8">
               <p className="font-display text-xl italic text-foreground/90">
-                "Семья — это не просто кровь. Это выбор быть рядом каждый день."
+                "Родина — це не просто кров. Це вибір бути поруч кожен день."
               </p>
             </blockquote>
 
             <Button variant="outline" size="lg" asChild>
-              <Link to="/history">Узнать больше</Link>
+              <Link to="/history">Дізнатися більше</Link>
             </Button>
           </motion.div>
         </div>

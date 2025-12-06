@@ -24,7 +24,7 @@ const Contact = () => {
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
     
-    toast.success("Сообщение отправлено! Мы свяжемся с вами в ближайшее время.");
+    toast.success("Повідомлення надіслано! Ми зв'яжемося з вами найближчим часом.");
     setFormData({ name: "", email: "", subject: "", message: "" });
     setIsSubmitting(false);
   };
@@ -42,14 +42,14 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="text-primary tracking-[0.4em] uppercase text-sm mb-4 font-display">
-              Связь с нами
+              Зв'язок з нами
             </p>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
               <span className="text-gradient-gold">Контакт</span>
             </h1>
             <p className="text-muted-foreground text-xl max-w-2xl mx-auto font-body">
-              Хотите стать частью семьи? У вас есть вопрос или предложение? 
-              Мы всегда рады новым знакомствам.
+              Хочете стати частиною родини? У вас є питання чи пропозиція? 
+              Ми завжди раді новим знайомствам.
             </p>
           </motion.div>
         </div>
@@ -67,14 +67,14 @@ const Contact = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-8">
-                <span className="text-foreground">Станьте частью </span>
-                <span className="text-gradient-gold">семьи</span>
+                <span className="text-foreground">Станьте частиною </span>
+                <span className="text-gradient-gold">родини</span>
               </h2>
 
               <p className="text-muted-foreground font-body text-lg leading-relaxed mb-10">
-                ZHURYLO — это не закрытый клуб. Это сообщество людей, которые разделяют 
-                наши ценности. Если вы верите в силу семьи, братства и чести — 
-                мы будем рады познакомиться.
+                ZHURYLO — це не закритий клуб. Це спільнота людей, які розділяють 
+                наші цінності. Якщо ви вірите в силу родини, братерства і честі — 
+                ми будемо раді познайомитися.
               </p>
 
               <div className="space-y-6">
@@ -93,8 +93,8 @@ const Contact = () => {
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-display text-lg uppercase tracking-wider mb-1">Локация</h3>
-                    <p className="text-muted-foreground font-body">Европа</p>
+                    <h3 className="font-display text-lg uppercase tracking-wider mb-1">Локація</h3>
+                    <p className="text-muted-foreground font-body">Європа</p>
                   </div>
                 </div>
 
@@ -103,8 +103,8 @@ const Contact = () => {
                     <Users className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-display text-lg uppercase tracking-wider mb-1">Сообщество</h3>
-                    <p className="text-muted-foreground font-body">Присоединяйтесь к нашим социальным сетям</p>
+                    <h3 className="font-display text-lg uppercase tracking-wider mb-1">Спільнота</h3>
+                    <p className="text-muted-foreground font-body">Приєднуйтесь до наших соціальних мереж</p>
                   </div>
                 </div>
               </div>
@@ -119,14 +119,14 @@ const Contact = () => {
             >
               <div className="luxury-card">
                 <h3 className="font-display text-2xl tracking-wider uppercase mb-6 text-center">
-                  Написать нам
+                  Написати нам
                 </h3>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name" className="font-display tracking-wider uppercase text-sm">
-                        Имя
+                        Ім'я
                       </Label>
                       <Input
                         id="name"
@@ -166,7 +166,7 @@ const Contact = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="message" className="font-display tracking-wider uppercase text-sm">
-                      Сообщение
+                      Повідомлення
                     </Label>
                     <Textarea
                       id="message"
@@ -186,10 +186,10 @@ const Contact = () => {
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
-                      "Отправка..."
+                      "Надсилання..."
                     ) : (
                       <>
-                        Отправить
+                        Надіслати
                         <Send className="w-4 h-4 ml-2" />
                       </>
                     )}
@@ -217,12 +217,12 @@ const Contact = () => {
             </div>
             
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
-              <span className="text-gradient-gold">Семья — это выбор</span>
+              <span className="text-gradient-gold">Родина — це вибір</span>
             </h2>
             
             <p className="text-muted-foreground font-body text-lg leading-relaxed">
-              Мы верим, что настоящие связи строятся не на крови, а на общих ценностях. 
-              Если вы разделяете наши принципы — добро пожаловать в семью ZHURYLO.
+              Ми віримо, що справжні зв'язки будуються не на крові, а на спільних цінностях. 
+              Якщо ви розділяєте наші принципи — ласкаво просимо до родини ZHURYLO.
             </p>
           </motion.div>
         </div>

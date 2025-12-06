@@ -6,24 +6,24 @@ import family7 from "@/assets/family-7.png";
 
 const timelineEvents = [
   {
-    year: "Начало",
-    title: "Корни",
-    description: "Каждая великая история начинается с первого шага. С решения быть больше, чем просто человек — быть семьёй.",
+    year: "Початок",
+    title: "Коріння",
+    description: "Кожна велика історія починається з першого кроку. З рішення бути більше, ніж просто людина — бути родиною.",
   },
   {
-    year: "Путь",
-    title: "Становление",
-    description: "Через испытания и победы, через расстояния и время — семья Zhurylo сохраняла то, что действительно важно.",
+    year: "Шлях",
+    title: "Становлення",
+    description: "Через випробування і перемоги, через відстані і час — родина Zhurylo зберігала те, що справді важливо.",
   },
   {
-    year: "Сегодня",
-    title: "Наследие",
-    description: "Три поколения, одни ценности. Отец и сыновья, несущие традицию братства и чести в современный мир.",
+    year: "Сьогодні",
+    title: "Спадщина",
+    description: "Три покоління, одні цінності. Батько і сини, що несуть традицію братерства і честі в сучасний світ.",
   },
   {
     year: "Завтра",
-    title: "Будущее",
-    description: "История продолжается. Новые главы ждут своих героев. И каждый из нас — автор этой саги.",
+    title: "Майбутнє",
+    description: "Історія продовжується. Нові розділи чекають своїх героїв. І кожен з нас — автор цієї саги.",
   },
 ];
 
@@ -35,7 +35,7 @@ const History = () => {
         <div className="absolute inset-0">
           <img
             src={family7}
-            alt="Семья Zhurylo"
+            alt="Родина Zhurylo"
             className="w-full h-full object-cover object-center opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
@@ -56,7 +56,7 @@ const History = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            <span className="text-gradient-gold">История семьи</span>
+            <span className="text-gradient-gold">Історія родини</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ const History = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-muted-foreground text-xl max-w-2xl mx-auto font-body"
           >
-            Кинематографичная сага о чести, традициях и силе семейных уз
+            Кінематографічна сага про честь, традиції та силу родинних уз
           </motion.p>
         </div>
       </section>
@@ -81,18 +81,18 @@ const History = () => {
             >
               <blockquote className="border-l-2 border-primary pl-8 mb-8">
                 <p className="font-display text-3xl md:text-4xl italic text-foreground/90 leading-relaxed">
-                  "В этом мире есть только одно, на что можно положиться — семья."
+                  "У цьому світі є тільки одне, на що можна покластися — родина."
                 </p>
               </blockquote>
               <p className="text-muted-foreground font-body text-lg leading-relaxed mb-6">
-                Как в великих кинематографических сагах, история семьи Zhurylo — 
-                это история о преданности, чести и несокрушимых узах, которые 
-                связывают поколения.
+                Як у великих кінематографічних сагах, історія родини Zhurylo — 
+                це історія про відданість, честь і незламні узи, що 
+                пов'язують покоління.
               </p>
               <p className="text-muted-foreground font-body text-lg leading-relaxed">
-                Но в отличие от экранных историй, здесь нет антагонистов и преступлений. 
-                Только чистая сила семейного духа, романтизированная эстетика власти 
-                и достоинства, и глубокое уважение к традициям.
+                Але на відміну від екранних історій, тут немає антагоністів і злочинів. 
+                Тільки чиста сила родинного духу, романтизована естетика влади 
+                і гідності, та глибока повага до традицій.
               </p>
             </motion.div>
 
@@ -106,7 +106,7 @@ const History = () => {
               <div className="photo-frame aspect-[4/5] overflow-hidden border border-primary/20">
                 <img
                   src={family5}
-                  alt="Семья Zhurylo"
+                  alt="Родина Zhurylo"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -128,7 +128,7 @@ const History = () => {
             className="text-center mb-16"
           >
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-gradient-gold">Путь</span>
+              <span className="text-gradient-gold">Шлях</span>
             </h2>
           </motion.div>
 
@@ -203,8 +203,8 @@ const History = () => {
             className="text-center mb-12"
           >
             <h2 className="font-display text-4xl md:text-5xl font-bold">
-              <span className="text-foreground">Отец и </span>
-              <span className="text-gradient-gold">сыновья</span>
+              <span className="text-foreground">Батько і </span>
+              <span className="text-gradient-gold">сини</span>
             </h2>
           </motion.div>
 
@@ -219,7 +219,7 @@ const History = () => {
             <div className="photo-frame aspect-[3/4] overflow-hidden">
               <img
                 src={family6}
-                alt="Отец и сыновья Zhurylo"
+                alt="Батько і сини Zhurylo"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -232,8 +232,8 @@ const History = () => {
             transition={{ delay: 0.3 }}
             className="text-center text-muted-foreground font-body text-xl mt-8 max-w-2xl mx-auto"
           >
-            Сила не в мускулах — она в том, чтобы быть рядом, когда это нужно. 
-            Передавать не только имя, но и характер.
+            Сила не в м'язах — вона в тому, щоб бути поруч, коли це потрібно. 
+            Передавати не тільки ім'я, а й характер.
           </motion.p>
         </div>
       </section>
