@@ -1,96 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Casino-inspired dark luxury palette */
+    --background: 0 0% 4%;
+    --foreground: 45 30% 90%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 7%;
+    --card-foreground: 45 30% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 45 30% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Gold as primary */
+    --primary: 43 74% 49%;
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Deep burgundy/crimson */
+    --secondary: 348 83% 25%;
+    --secondary-foreground: 45 30% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted dark tones */
+    --muted: 0 0% 12%;
+    --muted-foreground: 45 10% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Dark emerald accent */
+    --accent: 160 84% 18%;
+    --accent-foreground: 45 30% 95%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Neon crimson for destructive */
+    --destructive: 348 90% 50%;
+    --destructive-foreground: 45 30% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 43 30% 20%;
+    --input: 0 0% 12%;
+    --ring: 43 74% 49%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom brand colors */
+    --gold: 43 74% 49%;
+    --gold-light: 45 80% 60%;
+    --gold-dark: 40 70% 35%;
+    --burgundy: 348 83% 25%;
+    --burgundy-light: 348 70% 40%;
+    --crimson: 348 90% 50%;
+    --emerald: 160 84% 18%;
+    --emerald-light: 160 60% 30%;
+    --noir: 0 0% 4%;
+    --noir-light: 0 0% 8%;
+    --cream: 45 30% 90%;
+    --cream-muted: 45 10% 60%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Neon glow effects */
+    --neon-gold: 0 0 20px hsl(43 74% 49% / 0.5), 0 0 40px hsl(43 74% 49% / 0.3), 0 0 60px hsl(43 74% 49% / 0.1);
+    --neon-crimson: 0 0 20px hsl(348 90% 50% / 0.5), 0 0 40px hsl(348 90% 50% / 0.3);
+    --neon-emerald: 0 0 20px hsl(160 84% 18% / 0.5), 0 0 40px hsl(160 60% 30% / 0.3);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Typography */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Crimson Text', serif;
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 45 30% 90%;
+    --sidebar-primary: 43 74% 49%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 45 30% 90%;
+    --sidebar-border: 43 30% 20%;
+    --sidebar-ring: 43 74% 49%;
   }
 }
 
@@ -99,7 +81,173 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  /* Neon text glow */
+  .text-glow-gold {
+    text-shadow: var(--neon-gold);
+  }
+
+  .text-glow-crimson {
+    text-shadow: var(--neon-crimson);
+  }
+
+  /* Casino-style decorative line */
+  .casino-line {
+    @apply relative;
+  }
+
+  .casino-line::before,
+  .casino-line::after {
+    content: '';
+    @apply absolute top-1/2 w-16 md:w-32 h-px bg-gradient-to-r from-transparent via-primary to-transparent;
+  }
+
+  .casino-line::before {
+    @apply right-full mr-4;
+  }
+
+  .casino-line::after {
+    @apply left-full ml-4;
+  }
+
+  /* Glowing border effect */
+  .glow-border {
+    box-shadow: inset 0 0 20px hsl(var(--primary) / 0.1), 
+                0 0 20px hsl(var(--primary) / 0.1);
+  }
+
+  /* Cinematic vignette overlay */
+  .vignette {
+    box-shadow: inset 0 0 150px 50px hsl(0 0% 0% / 0.8);
+  }
+
+  /* Gold gradient text */
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-light via-primary to-gold-dark bg-clip-text text-transparent;
+  }
+
+  /* Decorative diamond separator */
+  .diamond-separator {
+    @apply flex items-center justify-center gap-4;
+  }
+
+  .diamond-separator::before,
+  .diamond-separator::after {
+    content: '';
+    @apply w-16 md:w-24 h-px bg-gradient-to-r from-transparent to-primary;
+  }
+
+  .diamond-separator::after {
+    @apply bg-gradient-to-l;
+  }
+
+  /* Photo frame with cinematic effect */
+  .photo-frame {
+    @apply relative overflow-hidden;
+  }
+
+  .photo-frame::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-noir via-transparent to-transparent opacity-60 z-10;
+  }
+
+  .photo-frame img {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .photo-frame:hover img {
+    @apply scale-105;
+  }
+
+  /* Luxurious card style */
+  .luxury-card {
+    @apply bg-card border border-primary/20 rounded-lg p-6 md:p-8;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(0 0% 5%) 100%);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  to {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--noir));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
 }
