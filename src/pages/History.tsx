@@ -110,7 +110,6 @@ const History = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 border border-primary/30" />
             </motion.div>
           </div>
         </div>
