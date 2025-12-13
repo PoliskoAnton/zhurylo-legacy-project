@@ -8,16 +8,16 @@ export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-background">
         <img
           src={family5}
           alt="Родина Zhurylo"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center opacity-90"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-transparent to-background/90" />
-        {/* Vignette effect */}
-        <div className="absolute inset-0 vignette" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-transparent to-background/50" />
+        {/* Vignette effect - reduced intensity */}
+        <div className="absolute inset-0 shadow-[inset_0_0_100px_30px_rgba(0,0,0,0.6)]" />
       </div>
 
       {/* Decorative Elements */}

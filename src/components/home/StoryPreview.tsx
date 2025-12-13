@@ -29,15 +29,6 @@ export const StoryPreview = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-
-            {/* Floating accent */}
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-noir/80 backdrop-blur-sm border border-primary/30 flex items-center justify-center p-3">
-              <img
-                src={logoImage}
-                alt="Zhurylo Family Logo"
-                className="w-full h-full object-contain"
-              />
-            </div>
           </motion.div>
 
           {/* Content Side */}
