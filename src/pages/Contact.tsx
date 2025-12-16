@@ -7,7 +7,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, MapPin, Send, Users } from "lucide-react";
 import { toast } from "sonner";
-import logoImage from "@/assets/logo.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({

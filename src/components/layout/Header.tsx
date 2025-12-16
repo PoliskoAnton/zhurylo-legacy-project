@@ -8,10 +8,6 @@ import logoImage from "@/assets/logo.png";
 
 const navLinks = [
   { href: "/", label: "Головна" },
-  { href: "/history", label: "Історія" },
-  { href: "/values", label: "Цінності" },
-  { href: "/directions", label: "Напрямки" },
-  { href: "/gallery", label: "Галерея" },
   { href: "/contact", label: "Контакт" },
 ];
 

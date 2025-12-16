@@ -68,17 +68,14 @@ export const HeroSection = () => {
           Family · Brotherhood · Integrity
         </motion.p>
 
-        {/* CTA Buttons */}
+        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex justify-center"
         >
           <Button variant="hero" size="xl" asChild>
-            <Link to="/history">Наша Історія</Link>
-          </Button>
-          <Button variant="neon" size="xl" asChild>
             <Link to="/contact">Приєднатися</Link>
           </Button>
         </motion.div>
