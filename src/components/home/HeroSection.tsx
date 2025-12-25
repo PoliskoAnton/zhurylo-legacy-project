@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import family5 from "@/assets/family-5.png";
+import { LetterWithHat } from "@/components/effects/SantaHat";
 
 export const HeroSection = () => {
   return (
@@ -19,10 +20,6 @@ export const HeroSection = () => {
         {/* Vignette effect - reduced intensity */}
         <div className="absolute inset-0 shadow-[inset_0_0_100px_30px_rgba(0,0,0,0.6)]" />
       </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute top-1/4 left-10 w-32 h-32 border border-primary/20 rotate-45 animate-pulse-slow" />
-      <div className="absolute bottom-1/4 right-10 w-24 h-24 border border-primary/10 rotate-12" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
@@ -43,7 +40,14 @@ export const HeroSection = () => {
           transition={{ duration: 1, delay: 0.4 }}
           className="font-display text-6xl md:text-8xl lg:text-9xl font-bold tracking-[0.2em] mb-4"
         >
-          <span className="text-gradient-gold text-glow-gold">ZHURYLO</span>
+          <span className="text-gradient-gold text-glow-gold">
+            ZH
+            <LetterWithHat
+              letter="U"
+              hatProps={{ size: 0.6, top: -0.35, left: 0.05, rotation: -12 }}
+            />
+            RYLO
+          </span>
         </motion.h1>
 
         {/* Decorative line with diamond */}
@@ -57,16 +61,6 @@ export const HeroSection = () => {
           <div className="w-3 h-3 rotate-45 bg-primary animate-glow" />
           <div className="w-24 md:w-32 h-px bg-gradient-to-l from-transparent to-primary" />
         </motion.div>
-
-        {/* Slogan */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="font-display text-xl md:text-2xl lg:text-3xl tracking-[0.3em] text-foreground/90 uppercase mb-12"
-        >
-          Family · Brotherhood · Integrity
-        </motion.p>
 
         {/* CTA Button */}
         <motion.div
