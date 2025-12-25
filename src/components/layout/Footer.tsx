@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className="bg-noir border-t border-primary/20 py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 gap-12 mb-12 max-w-3xl mx-auto">
           {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -36,38 +36,12 @@ export const Footer = () => {
             </p>
           </motion.div>
 
-          {/* Navigation */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <h4 className="font-display text-primary tracking-widest uppercase mb-6">
-              Навігація
-            </h4>
-            <nav className="flex flex-col gap-3">
-              <Link to="/" className="text-foreground/70 hover:text-primary transition-colors font-body">
-                Головна
-              </Link>
-              <Link to="/history" className="text-foreground/70 hover:text-primary transition-colors font-body">
-                Історія родини
-              </Link>
-              <Link to="/values" className="text-foreground/70 hover:text-primary transition-colors font-body">
-                Цінності
-              </Link>
-              <Link to="/gallery" className="text-foreground/70 hover:text-primary transition-colors font-body">
-                Галерея
-              </Link>
-            </nav>
-          </motion.div>
-
           {/* Contact */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h4 className="font-display text-primary tracking-widest uppercase mb-6">
               Зв'язатися

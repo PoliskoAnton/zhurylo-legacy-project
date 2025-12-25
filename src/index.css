@@ -234,6 +234,26 @@
   }
 }
 
+/* Santa hat gentle sway animation */
+@keyframes santa-hat-sway {
+  0%, 100% {
+    transform: rotate(-15deg) translateY(0);
+  }
+  25% {
+    transform: rotate(-12deg) translateY(-2px);
+  }
+  50% {
+    transform: rotate(-15deg) translateY(0);
+  }
+  75% {
+    transform: rotate(-18deg) translateY(-1px);
+  }
+}
+
+.animate-santa-hat {
+  animation: santa-hat-sway 3s ease-in-out infinite;
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
