@@ -48,35 +48,34 @@ export const SantaHat = ({
     >
       {/*
         SVG Santa Hat
-        - Red triangular hat body
-        - White fur trim at bottom
+        - Red triangular hat body (positioned higher, only top portion visible)
+        - White fur trim at bottom acts as the "brim" sitting on the letter
         - White pom-pom at top
       */}
       <svg
-        viewBox="0 0 100 100"
+        viewBox="0 0 100 70"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full"
+        style={{ overflow: "visible" }}
       >
-        {/* Hat body - red triangle with curve */}
+        {/* Hat body - red triangle with curve, positioned so bottom sits at edge */}
         <path
-          d="M50 5 C60 25, 85 50, 95 75 L5 75 C15 50, 40 25, 50 5Z"
+          d="M50 0 C65 15, 90 35, 98 58 L2 58 C10 35, 35 15, 50 0Z"
           fill="#c41e3a"
         />
         {/* Hat highlight/shine */}
         <path
-          d="M50 10 C55 25, 65 45, 70 65 L45 65 C45 45, 48 25, 50 10Z"
+          d="M50 5 C58 18, 72 35, 78 50 L42 50 C42 35, 47 18, 50 5Z"
           fill="#dc143c"
           opacity="0.5"
         />
-        {/* White fur trim at bottom */}
-        <ellipse cx="50" cy="78" rx="48" ry="12" fill="white" />
-        {/* Fur trim shadow */}
-        <ellipse cx="50" cy="80" rx="45" ry="8" fill="#f0f0f0" />
+        {/* White fur trim at bottom - this is the visible "brim" */}
+        <ellipse cx="50" cy="62" rx="50" ry="10" fill="white" />
         {/* Pom-pom at top */}
-        <circle cx="50" cy="8" r="10" fill="white" />
+        <circle cx="50" cy="3" r="12" fill="white" />
         {/* Pom-pom highlight */}
-        <circle cx="47" cy="5" r="4" fill="#f8f8f8" />
+        <circle cx="46" cy="0" r="5" fill="#fafafa" />
       </svg>
     </span>
   );

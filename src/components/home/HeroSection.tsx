@@ -44,7 +44,7 @@ export const HeroSection = () => {
             ZH
             <LetterWithHat
               letter="U"
-              hatProps={{ size: 0.6, top: -0.35, left: 0.05, rotation: -12 }}
+              hatProps={{ size: 0.77, top: -0.35, left: 0.02, rotation: -10 }}
             />
             RYLO
           </span>
