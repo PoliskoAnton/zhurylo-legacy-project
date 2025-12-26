@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, MapPin, Send, Users } from "lucide-react";
+import { Send } from "lucide-react";
 import { toast } from "sonner";
 import { Snowfall } from "@/components/effects/Snowfall";
 
@@ -58,7 +58,7 @@ const Contact = () => {
               <span className="text-gradient-gold">Контакт</span>
             </h1>
             <p className="text-muted-foreground text-xl max-w-2xl mx-auto font-body">
-              Хочете стати частиною родини? У вас є питання чи пропозиція? 
+              Хочете зв'язатися з нами? У вас є питання чи пропозиція?
               Ми завжди раді новим знайомствам.
             </p>
           </motion.div>
@@ -68,64 +68,13 @@ const Contact = () => {
       {/* Contact Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="font-display text-3xl md:text-4xl font-bold mb-8">
-                <span className="text-foreground">Станьте частиною </span>
-                <span className="text-gradient-gold">родини</span>
-              </h2>
-
-              <p className="text-muted-foreground font-body text-lg leading-relaxed mb-10">
-                ZHURYLO — це не закритий клуб. Це спільнота людей, які розділяють 
-                наші цінності. Якщо ви вірите в силу родини, братерства і честі — 
-                ми будемо раді познайомитися.
-              </p>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 border border-primary/30 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-lg uppercase tracking-wider mb-1">Email</h3>
-                    <p className="text-muted-foreground font-body">contact@zhurylo.family</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 border border-primary/30 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-lg uppercase tracking-wider mb-1">Локація</h3>
-                    <p className="text-muted-foreground font-body">Європа</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 border border-primary/30 flex items-center justify-center flex-shrink-0">
-                    <Users className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-lg uppercase tracking-wider mb-1">Спільнота</h3>
-                    <p className="text-muted-foreground font-body">Приєднуйтесь до наших соціальних мереж</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
+          <div className="max-w-xl mx-auto">
             {/* Contact Form */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8 }}
             >
               <div className="luxury-card">
                 <h3 className="font-display text-2xl tracking-wider uppercase mb-6 text-center">
