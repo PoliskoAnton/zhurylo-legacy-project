@@ -15,7 +15,7 @@ import { PersonCard } from "./PersonCard";
 const people = [
   {
     name: "Zhurylo Anton",
-    role: "Son",
+    role: "Chef",
     description: "",
     avatarColor: "#6b7280", // gray-500
     // Add your photo here - place image in src/assets/ and import it, or use a public URL
@@ -32,7 +32,7 @@ const people = [
   },
   {
     name: "Zhurylo Nil",
-    role: "Son",
+    role: "Boss",
     description: "",
     avatarColor: "#71717a", // zinc-500
     avatarImage: "/nil.jpg", // <-- ADD PHOTO: place nil.jpg in public folder
@@ -54,23 +54,9 @@ export const PersonCardsSection = () => {
 
       {/* Cards Container */}
       <div className="max-w-6xl mx-auto">
-        <div
-          className={
-            // Responsive grid:
-            // - Mobile: 1 column
-            // - Tablet: 2 columns (third card centered below)
-            // - Desktop: 3 columns
-            "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-8"
-          }
-        >
-          {people.map((person, index) => (
-            <div
-              key={person.name}
-              className={
-                // Center the third card on tablet view
-                index === 2 ? "md:col-span-2 lg:col-span-1 md:max-w-sm md:mx-auto lg:max-w-none" : ""
-              }
-            >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-8">
+          {people.map((person) => (
+            <div key={person.name}>
               <PersonCard
                 name={person.name}
                 role={person.role}

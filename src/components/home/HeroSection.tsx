@@ -38,7 +38,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="font-display text-6xl md:text-8xl lg:text-9xl font-bold tracking-[0.2em] mb-4"
+          className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-[0.1em] sm:tracking-[0.2em] mb-4 whitespace-nowrap"
         >
           <span className="text-gradient-gold text-glow-gold">
             ZH
@@ -70,7 +70,7 @@ export const HeroSection = () => {
           className="flex justify-center"
         >
           <Button variant="hero" size="xl" asChild>
-            <Link to="/contact">Приєднатися</Link>
+            <Link to="/contact">Welcome</Link>
           </Button>
         </motion.div>
       </div>
