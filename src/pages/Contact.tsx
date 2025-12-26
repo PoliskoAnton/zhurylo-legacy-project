@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, MapPin, Send, Users } from "lucide-react";
 import { toast } from "sonner";
+import { Snowfall } from "@/components/effects/Snowfall";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,6 +32,15 @@ const Contact = () => {
 
   return (
     <Layout>
+      <Snowfall
+        snowflakeCount={120}
+        minSpeed={0.3}
+        maxSpeed={1.5}
+        minRadius={1}
+        maxRadius={3}
+        opacity={0.7}
+        wind={0.3}
+      />
       {/* Hero */}
       <section className="relative min-h-[40vh] flex items-center justify-center pt-24">
         <div className="absolute inset-0 bg-gradient-to-b from-noir-light via-background to-background" />
