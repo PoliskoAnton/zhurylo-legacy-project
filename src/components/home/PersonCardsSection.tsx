@@ -22,6 +22,7 @@ const people = [
     // Example: avatarImage: "/your-photo.jpg" (place file in public folder)
     // Or import: import antonPhoto from "@/assets/anton.jpg"; then use avatarImage: antonPhoto
     avatarImage: "/anton.jpg",
+    resumePdf: "/resumes/anton-resume.pdf", // <-- ADD RESUME: place PDF in public/resumes folder
   },
   {
     name: "Zhurylo Mykola",
@@ -29,6 +30,7 @@ const people = [
     description: "",
     avatarColor: "#78716c", // stone-500
     avatarImage: "/mykola.jpg", // <-- ADD PHOTO: place mykola.jpg in public folder
+    resumePdf: "/resumes/mykola-resume.pdf", // <-- ADD RESUME: place PDF in public/resumes folder
   },
   {
     name: "Zhurylo Nil",
@@ -36,6 +38,7 @@ const people = [
     description: "",
     avatarColor: "#71717a", // zinc-500
     avatarImage: "/nil.jpg", // <-- ADD PHOTO: place nil.jpg in public folder
+    resumePdf: "/resumes/nil-resume.pdf", // <-- ADD RESUME: place PDF in public/resumes folder
   },
 ];
 
@@ -56,13 +59,14 @@ export const PersonCardsSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-8">
           {people.map((person) => (
-            <div key={person.name}>
+            <div key={person.name} className="pb-80">
               <PersonCard
                 name={person.name}
                 role={person.role}
                 description={person.description}
                 avatarColor={person.avatarColor}
                 avatarImage={person.avatarImage}
+                resumePdf={person.resumePdf}
               />
             </div>
           ))}
