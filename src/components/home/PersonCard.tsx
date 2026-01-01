@@ -209,8 +209,8 @@ export const PersonCard = ({
             "transition-all duration-500 ease-out",
             "origin-top",
             showResume
-              ? "max-h-[500px] opacity-100 scale-y-100"
-              : "max-h-0 opacity-0 scale-y-95"
+              ? "max-h-[500px] opacity-100 scale-y-100 visible"
+              : "max-h-0 opacity-0 scale-y-95 invisible"
           )}
         >
           <div className="p-5">

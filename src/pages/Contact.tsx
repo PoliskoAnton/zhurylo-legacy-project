@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
@@ -8,8 +8,20 @@ import { Label } from "@/components/ui/label";
 import { Send } from "lucide-react";
 import { toast } from "sonner";
 import { Snowfall } from "@/components/effects/Snowfall";
+import emailjs from "@emailjs/browser";
+
+// EmailJS Configuration
+// To set up EmailJS:
+// 1. Go to https://www.emailjs.com/ and create a free account
+// 2. Add an email service (e.g., Gmail) in Email Services
+// 3. Create an email template with variables: {{from_name}}, {{from_email}}, {{subject}}, {{message}}
+// 4. Replace the values below with your actual IDs
+const EMAILJS_SERVICE_ID = "service_wyfxtd6"; // Replace with your EmailJS service ID
+const EMAILJS_TEMPLATE_ID = "template_cekmeud"; // Replace with your EmailJS template ID
+const EMAILJS_PUBLIC_KEY = "s_o5-L4tXReLVIIm4"; // Replace with your EmailJS public key
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,13 +33,30 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast.success("Повідомлення надіслано! Ми зв'яжемося з вами найближчим часом.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
+
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: "anton.winner07@gmail.com",
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      toast.success("Повідомлення надіслано! Ми зв'яжемося з вами найближчим часом.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error("Помилка надсилання. Спробуйте пізніше або напишіть напряму на anton.winner07@gmail.com");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
