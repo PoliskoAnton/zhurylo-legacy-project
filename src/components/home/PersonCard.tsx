@@ -209,7 +209,7 @@ export const PersonCard = ({
             "transition-all duration-500 ease-out",
             "origin-top",
             showResume
-              ? "max-h-[800px] md:max-h-[500px] opacity-100 scale-y-100 visible"
+              ? "max-h-[90vh] md:max-h-[500px] opacity-100 scale-y-100 visible"
               : "max-h-0 opacity-0 scale-y-95 invisible"
           )}
         >
@@ -222,11 +222,11 @@ export const PersonCard = ({
               </span>
             </div>
 
-            {/* PDF Preview Embed - taller on mobile for better visibility */}
+            {/* PDF Preview Embed - scrollable on mobile to see full resume */}
             <div className="bg-[#252525] rounded-lg overflow-hidden mb-4 border border-[#3a3a3a]">
               <iframe
-                src={`${resumePdf}#toolbar=0&navpanes=0&view=FitH`}
-                className="w-full h-[500px] md:h-64"
+                src={`${resumePdf}#toolbar=0&navpanes=0&view=FitW`}
+                className="w-full h-[70vh] md:h-64 md:pointer-events-none"
                 title={`${name} Resume Preview`}
               />
             </div>
