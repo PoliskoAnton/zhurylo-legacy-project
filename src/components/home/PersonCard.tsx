@@ -222,13 +222,20 @@ export const PersonCard = ({
               </span>
             </div>
 
-            {/* PDF Preview Embed - scrollable on mobile to see full resume */}
-            <div className="bg-[#252525] rounded-lg overflow-hidden mb-4 border border-[#3a3a3a]">
-              <iframe
-                src={`${resumePdf}#toolbar=0&navpanes=0&view=FitW`}
-                className="w-full h-[70vh] md:h-64 md:pointer-events-none"
+            {/* PDF Preview Embed - use object tag for better iOS compatibility */}
+            <div className="bg-[#252525] rounded-lg overflow-auto mb-4 border border-[#3a3a3a] max-h-[70vh] md:max-h-none md:overflow-hidden">
+              <object
+                data={`${resumePdf}#toolbar=0&navpanes=0&view=FitW`}
+                type="application/pdf"
+                className="w-full h-[1200px] md:h-64"
                 title={`${name} Resume Preview`}
-              />
+              >
+                <iframe
+                  src={`${resumePdf}#toolbar=0&navpanes=0&view=FitW`}
+                  className="w-full h-[1200px] md:h-64"
+                  title={`${name} Resume Preview`}
+                />
+              </object>
             </div>
 
             {/* Download Button with Tornado Animation */}
