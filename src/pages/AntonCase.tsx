@@ -1,0 +1,93 @@
+import { Layout } from "@/components/layout/Layout";
+import { Snowfall } from "@/components/effects/Snowfall";
+import { CaseRoulette } from "@/components/portfolio/CaseRoulette";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+
+const AntonCase = () => {
+  return (
+    <Layout>
+      <Snowfall
+        snowflakeCount={60}
+        minSpeed={0.2}
+        maxSpeed={1}
+        minRadius={1}
+        maxRadius={2}
+        opacity={0.5}
+        wind={0.1}
+      />
+
+      <section className="relative z-10 min-h-screen pt-28 pb-20 px-4 md:px-8">
+        {/* Back Button */}
+        <div className="max-w-4xl mx-auto mb-8">
+          <Link
+            to="/portfolio"
+            className="inline-flex items-center gap-2 text-cream-muted hover:text-primary transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span className="font-medium">Back to Portfolio</span>
+          </Link>
+        </div>
+
+        {/* Title */}
+        <div className="text-center mb-12">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-gold mb-4">
+            Anton's Case
+          </h1>
+          <div className="diamond-separator">
+            <span className="w-2 h-2 rotate-45 bg-primary" />
+          </div>
+          <p className="mt-6 text-cream-muted text-lg max-w-xl mx-auto">
+            Test your luck! Open the case and see what prize awaits you.
+          </p>
+        </div>
+
+        {/* Case Display */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <div className="relative aspect-video max-w-md mx-auto flex items-center justify-center">
+            {/* Case Box */}
+            <div className="relative w-64 h-48 perspective-1000">
+              <div className="absolute inset-0 bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a] rounded-xl border-2 border-primary/30 shadow-[0_0_40px_hsl(43_74%_49%_/_0.3)] flex items-center justify-center">
+                <div className="text-center">
+                  <span className="text-6xl">📦</span>
+                  <p className="mt-2 font-display text-primary text-lg tracking-wider">
+                    ZHURYLO CASE
+                  </p>
+                </div>
+              </div>
+              {/* Glow effect */}
+              <div className="absolute inset-0 rounded-xl bg-primary/10 animate-pulse-slow" />
+            </div>
+          </div>
+        </div>
+
+        {/* Roulette */}
+        <CaseRoulette />
+
+        {/* Info Section */}
+        <div className="max-w-2xl mx-auto mt-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div className="p-4 rounded-lg bg-[#1f1f1f] border border-[#3a3a3a]">
+              <div className="w-3 h-3 rounded-full mx-auto mb-2" style={{ backgroundColor: "#b0c3d9" }} />
+              <p className="text-xs text-cream-muted uppercase tracking-wider">Common</p>
+            </div>
+            <div className="p-4 rounded-lg bg-[#1f1f1f] border border-[#3a3a3a]">
+              <div className="w-3 h-3 rounded-full mx-auto mb-2" style={{ backgroundColor: "#4b69ff" }} />
+              <p className="text-xs text-cream-muted uppercase tracking-wider">Rare</p>
+            </div>
+            <div className="p-4 rounded-lg bg-[#1f1f1f] border border-[#3a3a3a]">
+              <div className="w-3 h-3 rounded-full mx-auto mb-2" style={{ backgroundColor: "#8847ff" }} />
+              <p className="text-xs text-cream-muted uppercase tracking-wider">Epic</p>
+            </div>
+            <div className="p-4 rounded-lg bg-[#1f1f1f] border border-[#3a3a3a]">
+              <div className="w-3 h-3 rounded-full mx-auto mb-2" style={{ backgroundColor: "#eb4b4b" }} />
+              <p className="text-xs text-cream-muted uppercase tracking-wider">Legendary</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default AntonCase;
