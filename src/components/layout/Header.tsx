@@ -8,6 +8,7 @@ import logoImage from "@/assets/logo.png";
 
 const navLinks = [
   { href: "/", label: "Головна" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "/contact", label: "Контакт" },
 ];
 
