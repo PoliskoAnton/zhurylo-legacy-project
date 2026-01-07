@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import logoImage from "@/assets/logo.png";
+import { VSCoinDisplay } from "@/components/vscoin/VSCoinDisplay";
 
 const navLinks = [
   { href: "/", label: "Головна" },
@@ -95,15 +96,30 @@ export const Header = () => {
           ))}
         </nav>
 
-        {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="lg:hidden"
-          onClick={() => setIsOpen(!isOpen)}
+        {/* VS Coin Balance Display - Desktop */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="hidden lg:block"
         >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </Button>
+          <VSCoinDisplay size="md" />
+        </motion.div>
+
+        {/* Right side: VS Coin (mobile) + Menu Button */}
+        <div className="flex items-center gap-3 lg:hidden">
+          {/* VS Coin Balance Display - Mobile */}
+          <VSCoinDisplay size="sm" />
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </Button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}

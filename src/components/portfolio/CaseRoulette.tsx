@@ -1,5 +1,7 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { useVSCoin } from "@/hooks/useVSCoin";
+import { VSCoinIcon } from "@/components/vscoin/VSCoinDisplay";
 
 // Skin rarity types
 type Rarity = "common" | "rare" | "epic" | "legendary";
@@ -57,44 +59,54 @@ export const CaseRoulette = ({ onResult }: CaseRouletteProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | null>(null);
 
-  // Generate randomized items with rarity chances
+  // VS Coin integration - currency and inventory management
+  const { spendCoins, addToInventory, canAffordCase, CASE_PRICE } = useVSCoin();
+
+  // ==========================================
+  // Drop Rate Logic
+  // ==========================================
+  // Common: 60%, Rare: 25%, Epic: 10%, Legendary: 5%
+  // These rates are designed for fair gameplay while maintaining excitement
+  // ==========================================
   const generateItemsWithNearMiss = useCallback(() => {
     const newItems: Skin[] = [];
 
-    // Generate random items
+    // Generate random items for the roulette display
     for (let i = 0; i < VISIBLE_ITEMS; i++) {
       const randomSkin = skins[Math.floor(Math.random() * skins.length)];
       newItems.push({ ...randomSkin, id: i });
     }
 
-    // Determine winning rarity based on chances
-    // 60% common/rare, 30% epic, 10% legendary
+    // Determine winning rarity based on defined drop rates
     const roll = Math.random() * 100;
     let winningRarity: Rarity;
 
-    if (roll < 10) {
-      // 10% chance - Legendary
+    if (roll < 5) {
+      // 5% chance - Legendary (hardest to get)
       winningRarity = "legendary";
-    } else if (roll < 40) {
-      // 30% chance - Epic
+    } else if (roll < 15) {
+      // 10% chance - Epic
       winningRarity = "epic";
+    } else if (roll < 40) {
+      // 25% chance - Rare
+      winningRarity = "rare";
     } else {
-      // 60% chance - Common or Rare
-      winningRarity = Math.random() > 0.5 ? "common" : "rare";
+      // 60% chance - Common (most frequent)
+      winningRarity = "common";
     }
 
-    // Get skins of the winning rarity
+    // Get skins of the winning rarity and pick a random one
     const winningSkins = skins.filter(s => s.rarity === winningRarity);
     const winningSkin = winningSkins[Math.floor(Math.random() * winningSkins.length)];
     newItems[WINNING_INDEX] = { ...winningSkin, id: WINNING_INDEX };
 
-    // Near-miss logic: Only add near-miss if we're NOT winning legendary/epic
+    // Near-miss logic: Add a rare item near the winning position for excitement
     // This creates the "almost won" feeling for common/rare wins
     if (winningRarity === "common" || winningRarity === "rare") {
       const nearMissOffset = Math.random() > 0.5 ? 1 : 2;
       const legendaryPosition = WINNING_INDEX + nearMissOffset;
 
-      // Pick a random legendary or epic for near-miss
+      // Pick a random legendary or epic for near-miss effect
       const rareItems = skins.filter(s => s.rarity === "legendary" || s.rarity === "epic");
       const nearMissSkin = rareItems[Math.floor(Math.random() * rareItems.length)];
       newItems[legendaryPosition] = { ...nearMissSkin, id: legendaryPosition };
@@ -117,9 +129,21 @@ export const CaseRoulette = ({ onResult }: CaseRouletteProps) => {
     return 1 - Math.pow(1 - t, 5);
   };
 
-  // Spin animation using requestAnimationFrame
+  // ==========================================
+  // Spin Animation with VS Coin Integration
+  // ==========================================
+  // 1. Check if user can afford the case (250 VS Coin)
+  // 2. Deduct coins before spinning
+  // 3. Run the roulette animation
+  // 4. Add won item to inventory when complete
+  // ==========================================
   const spin = useCallback(() => {
     if (isSpinning) return;
+
+    // Try to spend VS Coins - if insufficient, spendCoins shows a toast
+    if (!spendCoins(CASE_PRICE)) {
+      return; // Don't proceed if can't afford
+    }
 
     // Reset state and position
     setWonSkin(null);
@@ -161,13 +185,22 @@ export const CaseRoulette = ({ onResult }: CaseRouletteProps) => {
           // Animation complete - set the actual winner from the items array
           setIsSpinning(false);
           setWonSkin(winner);
+
+          // Add the won item to the user's inventory
+          addToInventory({
+            skinId: winner.id,
+            name: winner.name,
+            rarity: winner.rarity,
+            image: winner.image,
+          });
+
           onResult?.(winner);
         }
       };
 
       animationRef.current = requestAnimationFrame(animate);
     }, 50);
-  }, [isSpinning, generateItemsWithNearMiss, onResult]);
+  }, [isSpinning, generateItemsWithNearMiss, onResult, spendCoins, addToInventory, CASE_PRICE]);
 
   // Cleanup animation on unmount
   useEffect(() => {
@@ -238,11 +271,11 @@ export const CaseRoulette = ({ onResult }: CaseRouletteProps) => {
         </div>
       </div>
 
-      {/* Open Button */}
+      {/* Open Button with VS Coin Price */}
       <div className="mt-8 text-center">
         <button
           onClick={spin}
-          disabled={isSpinning}
+          disabled={isSpinning || !canAffordCase}
           className={cn(
             "px-12 py-4 rounded-lg font-display text-xl uppercase tracking-wider",
             "bg-gradient-to-r from-primary via-gold-light to-primary",
@@ -252,11 +285,30 @@ export const CaseRoulette = ({ onResult }: CaseRouletteProps) => {
             "transition-all duration-300",
             "hover:shadow-[0_0_50px_hsl(43_74%_49%_/_0.6)]",
             "hover:scale-105",
-            "disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            "disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100",
+            // Visual indicator when can't afford
+            !canAffordCase && !isSpinning && "from-gray-500 via-gray-400 to-gray-500 border-gray-500/50"
           )}
         >
-          {isSpinning ? "Opening..." : "Open Case"}
+          {isSpinning ? (
+            "Opening..."
+          ) : (
+            <span className="flex items-center justify-center gap-2">
+              <span>Open Case</span>
+              <span className="flex items-center gap-1 text-lg">
+                <VSCoinIcon size="sm" />
+                <span>{CASE_PRICE}</span>
+              </span>
+            </span>
+          )}
         </button>
+
+        {/* Insufficient funds warning */}
+        {!canAffordCase && !isSpinning && (
+          <p className="mt-3 text-sm text-red-400 animate-pulse">
+            Insufficient VS Coins! You need {CASE_PRICE} VS Coins to open a case.
+          </p>
+        )}
       </div>
 
       {/* Result Display */}
